@@ -1,2 +1,4 @@
 .venv
 .env
+cli/test.py
+cli/__pycache__
