@@ -4,7 +4,7 @@
 
 - [X] script to generate sql table structure
 - CLI only implementation of note app
-    - [ ] add note
+    - [X] add note
     - [ ] delete note
     - [ ] edit note
     - [ ] search note by author or date
@@ -19,3 +19,5 @@
 
 ### _resources:_
 - [sql-connector official docs](https://dev.mysql.com/doc/connector-python/en)
+- [datetime module](https://www.geeksforgeeks.org/python-datetime-module)
+- [MySQL AUTO_INCREMENT](https://dev.mysql.com/doc/refman/8.4/en/example-auto-increment.html)
