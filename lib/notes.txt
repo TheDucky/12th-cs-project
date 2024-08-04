@@ -1,0 +1,15 @@
++---------+---------------+------+-----+---------+-------+
+| Field   | Type          | Null | Key | Default | Extra |
++---------+---------------+------+-----+---------+-------+
+| sno     | int(11)       | NO   | PRI | NULL    |       |
+| author  | varchar(50)   | NO   |     | NULL    |       |
+| note    | varchar(5000) | NO   |     | NULL    |       |
+| created | date          | NO   |     | NULL    |       |
++---------+---------------+------+-----+---------+-------+
+
+create table structure_draft(
+    -> sno int primary key,
+    -> author varchar(50) not null,
+    -> note varchar(5000) not null,
+    -> created date not null
+    -> );
