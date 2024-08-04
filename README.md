@@ -5,10 +5,11 @@
 - [X] script to generate sql table structure
 - CLI only implementation of note app
     - [X] add note
-    - [ ] delete note
+    - [X] delete note
     - [ ] edit note
     - [ ] search note by author or date
-- [ ] run flask application
+- [X] run flask application
+- [X] display notes
 - [ ] design basic web UI
 - implement CLI features on webpage
     - [ ] add note
