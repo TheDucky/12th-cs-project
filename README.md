@@ -6,7 +6,7 @@
 - CLI only implementation of note app
     - [X] add note
     - [X] delete note
-    - [ ] edit note
+    - [X] edit note
     - [ ] search note by author or date
 - [X] run flask application
 - [X] display notes
