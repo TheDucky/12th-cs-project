@@ -30,9 +30,9 @@ try:
 
     controller.execute("""create table note_logs( 
                         sno int primary key auto_increment,
-                        author varchar(50) not null,
-                        note varchar(5000) not null,
-                        created varchar(20) not null );""")
+                        title varchar(150) not null,
+                        note varchar(10000) not null,
+                        created varchar(20) not null )""")
     print("table [note_logs] created")
 
     # auto increment: attribute can be used to generate a unique identity for new rows.
@@ -40,6 +40,6 @@ try:
 except:
     print("unable to generate database and/or table")
 finally:
-    print("all jobs done")
+    print("closing connection")
     controller.close()
     connection.close()
