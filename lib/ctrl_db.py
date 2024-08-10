@@ -29,7 +29,7 @@ def get_notes():
 
 def add_note(author, note):
     raw_date = datetime.now()
-    created = raw_date.strftime('%Y-%m-%d %H:%M:%S') # formated date
+    created = raw_date.strftime('%Y-%m-%d %I:%M %p') # formated date
     query = "insert into note_logs (author, note, created) values('{0}', '{1}', '{2}')".format(author, note, created)
     controller.execute(query)
     connection.commit()
