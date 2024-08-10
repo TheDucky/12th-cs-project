@@ -27,10 +27,13 @@ def get_notes():
     notes = controller.fetchall()
     return notes
 
-def add_note(author, note):
+def add_note(title, note):
+    clean_title = title.replace("'", "") 
+    clean_note = note.replace("'", "")
+    # above two are used to prevent sql injection and crashing the site
     raw_date = datetime.now()
     created = raw_date.strftime('%Y-%m-%d %I:%M %p') # formated date
-    query = "insert into note_logs (author, note, created) values('{0}', '{1}', '{2}')".format(author, note, created)
+    query = "insert into note_logs (title, note, created) values('{0}', '{1}', '{2}')".format(clean_title, clean_note, created)
     controller.execute(query)
     connection.commit()
     print('new note added')
@@ -44,4 +47,11 @@ def delete_note(sno):
     except:
         print('error unable to delete selected note')
 
-#def edit_note():
+def edit_note(sno, newnote):
+    try:
+        query = "update note_logs set note = '{0}' where sno = {1}".format(newnote, sno)
+        controller.execute(query)
+        connection.commit()
+        print('note edited')
+    except:
+        print('error unable to edit note')
