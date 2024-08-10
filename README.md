@@ -12,8 +12,8 @@
 - [X] display notes
 - [ ] design basic web UI
 - implement CLI features on webpage
-    - [ ] add note
-    - [ ] delete note
+    - [X] add note
+    - [X] delete note
     - [ ] edit note
     - [ ] search note by author or date
 - [ ] export note list as plain text file to user
