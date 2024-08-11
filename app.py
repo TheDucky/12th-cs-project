@@ -11,6 +11,7 @@ def index():
     if request.method == 'POST':
         title = request.form.get('title')
         note = request.form.get('note')
+        print(note)
         cd.add_note(title, note)
         return redirect(url_for('index')) # used to clean the data already present in the form
 
@@ -22,6 +23,16 @@ def delete(sno):
     
     cd.delete_note(sno)
     return redirect(url_for('index'))
+
+@app.route('/<int:sno>/vedit', methods=('POST', 'GET'))
+def edit(sno):
+
+    if request.method == 'POST':
+        newnote = request.form.get('newnote')
+        cd.edit_note(sno, newnote)
+        return redirect(url_for('index'))
+    
+    return render_template('edit.html', note=cd.get_one_note(sno))
 
 # name class instance is used my flask to get resources, templates etc
 if __name__ == '__main__': 

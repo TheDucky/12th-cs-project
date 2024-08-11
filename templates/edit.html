@@ -1,0 +1,15 @@
+{% extends "boilerplate.html" %}
+{% block title %}Edit note {{ note[0] }}{% endblock %}
+
+{% block content %}
+    <h4>view note</h4>
+    <p>{{ note }}</p>
+
+    <h4>edit note</h4>
+    <form method="POST">
+        <textarea name="newnote" placeholder="write new note..." required></textarea>
+        <br><br>
+        <button>Submit</button>
+    </form>
+    <a href="/"><button>Go back</button></a>
+{% endblock %}

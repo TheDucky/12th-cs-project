@@ -14,7 +14,7 @@
 - implement CLI features on webpage
     - [X] add note
     - [X] delete note
-    - [ ] edit note
+    - [X] edit note
     - [ ] search note by author or date
 - [ ] export note list as plain text file to user
 

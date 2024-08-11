@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <form method="post">
+    <form method="POST">
         <input type="text" name="title" placeholder="Title..." required>
         <br><br>
         <textarea name="note" placeholder="Make a note..." required></textarea>
@@ -22,12 +22,17 @@
         <tr>
             <td>{{ note[0] }}</td>
             <td>{{ note[1] }}</td>
-            <td>{{ note[2] }}</td>
+            <!-- This tells HTML to show all whitespace exactly as it appears in the source, including newlines. -->
+            <td style="white-space: pre-wrap;">{{ note[2] }}</td>
             <td>{{ note[3] }}</td>
-            <td><a href="">edit</a></td>
+            <td>
+                <a href="{{ url_for('edit', sno=note[0]) }}">
+                    <button>View/Edit</button>
+                </a>
+            </td>
             <td>
                 <form action="{{ url_for('delete', sno=note[0]) }}" method="POST">
-                    <input type="submit" value="Delete" onclick="return confirm('are you sure you want to delete this note?')">
+                    <input type="submit" value="Delete">
                 </form>
             </td>
         </tr>

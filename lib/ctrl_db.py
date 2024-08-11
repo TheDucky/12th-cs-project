@@ -27,6 +27,12 @@ def get_notes():
     notes = controller.fetchall()
     return notes
 
+def get_one_note(sno):
+    query = 'select * from notes where sno = {}'.format(sno)
+    controller.execute(query)
+    note = controller.fetchall()
+    return note
+
 def add_note(title, note):
     clean_title = title.replace("'", "") 
     clean_note = note.replace("'", "")
