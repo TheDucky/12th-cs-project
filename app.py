@@ -9,9 +9,9 @@ app = Flask(__name__)
 def index():
 
     if request.method == 'POST':
-        author = request.form.get('author')
+        title = request.form.get('title')
         note = request.form.get('note')
-        cd.add_note(author, note)
+        cd.add_note(title, note)
         return redirect(url_for('index')) # used to clean the data already present in the form
 
     notes = cd.get_notes()

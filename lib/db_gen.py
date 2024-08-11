@@ -28,12 +28,12 @@ try:
     print("switching to database [notes_app_db]")
     controller.execute("use notes_app_db")
 
-    controller.execute("""create table note_logs( 
+    controller.execute("""create table notes( 
                         sno int primary key auto_increment,
                         title varchar(150) not null,
                         note varchar(10000) not null,
                         created varchar(20) not null )""")
-    print("table [note_logs] created")
+    print("table [notes] created")
 
     # auto increment: attribute can be used to generate a unique identity for new rows.
     # this removes the need to rowcount or pass in any search queries before adding the next sno
