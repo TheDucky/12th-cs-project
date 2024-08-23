@@ -10,13 +10,14 @@
     - [ ] search note by author or date
 - [X] run flask application
 - [X] display notes
-- [ ] design basic web UI
+- [X] design basic web UI
 - implement CLI features on webpage
     - [X] add note
     - [X] delete note
     - [X] edit note
     - [ ] search note by author or date
 - [ ] export note list as plain text file to user
+- [ ] use htmx
 
 ### _resources:_
 - [sql-connector official docs](https://dev.mysql.com/doc/connector-python/en)

@@ -11,7 +11,6 @@ def index():
     if request.method == 'POST':
         title = request.form.get('title')
         note = request.form.get('note')
-        print(note)
         cd.add_note(title, note)
         return redirect(url_for('index')) # used to clean the data already present in the form
 
@@ -36,4 +35,4 @@ def edit(sno):
 
 # name class instance is used my flask to get resources, templates etc
 if __name__ == '__main__': 
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
