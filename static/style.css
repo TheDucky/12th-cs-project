@@ -1,0 +1,78 @@
+body {
+    background-color: #e5e9f0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sform {
+    max-width: 630px;
+    padding: 10px;
+    padding-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sform_title, .sform_note {
+    background-color: #eceff4;
+    width: 100%;  
+    padding: 10px; 
+    border: 2px solid #8fbcbb;
+    border-radius: 4px; 
+    font-size: 16px; 
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline-style: none; /* prevents highlights on text box */
+}
+
+.sform_note {
+    height: 150px; 
+    resize: vertical;
+}
+
+.sform_button {
+    background-color: #d8dee9;
+    color: #2e3440;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; 
+    font-size: 16px;
+    transition: background-color 0.4s;
+}
+
+.sform_button:hover {
+    background-color: #8fbcbb;
+}
+
+.note_container {
+    background-color: #eceff4;
+    border-radius: 10px;
+    max-width: 600px;
+    border: 2px solid #8fbcbb;
+    padding: 20px;
+    padding-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.note_title {
+    color: #2e3440;
+}
+
+.note_content {
+    color: #3b4252;
+    white-space: pre-wrap; 
+    /* This tells HTML to show all whitespace exactly as it appears in the source, including newlines. */
+}
+
+.note_date {
+    color: #888;
+    text-align: right;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons a {
+    margin-right: 10px;
+}

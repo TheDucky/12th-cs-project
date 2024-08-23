@@ -3,39 +3,31 @@
 
 {% block content %}
 
-    <form method="POST">
-        <input type="text" name="title" placeholder="Title..." required>
+    <form method="POST" class="sform">
+        <input class="sform_title" type="text" name="title" placeholder="Add Title..." required>
         <br><br>
-        <textarea name="note" placeholder="Make a note..." required></textarea>
+        <textarea class="sform_note" name="note" placeholder="Make a note..." required></textarea>
         <br><br>
-        <button>Submit</button> 
+        <div class="buttons">
+            <button class="sform_button">Submit</button> 
+        </div>
     </form>
+    <br><br>
 
-    <table>
-        <tr>
-            <th>SNO</th>
-            <th>Title</th>
-            <th>Note</th>
-            <th>Date created</th>
-        </tr>
-        {% for note in notes %}
-        <tr>
-            <td>{{ note[0] }}</td>
-            <td>{{ note[1] }}</td>
-            <!-- This tells HTML to show all whitespace exactly as it appears in the source, including newlines. -->
-            <td style="white-space: pre-wrap;">{{ note[2] }}</td>
-            <td>{{ note[3] }}</td>
-            <td>
-                <a href="{{ url_for('edit', sno=note[0]) }}">
-                    <button>View/Edit</button>
-                </a>
-            </td>
-            <td>
-                <form action="{{ url_for('delete', sno=note[0]) }}" method="POST">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+    {% for note in notes|reverse %}
+    <div class="note_container">
+        <h2 class="note_title">{{ note[1] }}</h2>
+        <p class="note_content">{{ note[2] }}</p>
+        <p class="note_date"><i>{{ note[3] }}</i></p>
+        <div class="buttons">
+            <a href="{{ url_for('edit', sno=note[0]) }}">
+                <button>View/Edit</button>
+            </a>
+            <form action="{{ url_for('delete', sno=note[0]) }}" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
 {% endblock %}
