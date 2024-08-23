@@ -11,7 +11,7 @@ cn_conf = {
     "passwd": getenv('MYSQL_PASSKEY')
 }
 
-connection = db.connect(**cn_conf);
+connection = db.connect(**cn_conf)
 
 if connection.is_connected():
     print("handshake successful")
@@ -30,7 +30,7 @@ def get_notes():
 def get_one_note(sno):
     query = 'select * from notes where sno = {}'.format(sno)
     controller.execute(query)
-    note = controller.fetchall()
+    note = controller.fetchone()
     return note
 
 def add_note(title, note):
@@ -49,7 +49,7 @@ def delete_note(sno):
         query = "delete from notes where sno = {}".format(sno)
         controller.execute(query)
         connection.commit()
-        print('deleted note')
+        print('note deleted')
     except:
         print('error unable to delete selected note')
 
