@@ -12,7 +12,7 @@ cn_conf = {
     "passwd": getenv('MYSQL_PASSKEY')
 }
 
-connection = db.connect(**cn_conf);
+connection = db.connect(**cn_conf)
 
 if connection.is_connected():
     print("handshake successful")
