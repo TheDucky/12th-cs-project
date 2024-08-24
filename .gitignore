@@ -2,3 +2,4 @@
 .env
 lib/test.py
 lib/__pycache__
+requirements.txt
