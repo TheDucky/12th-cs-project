@@ -1,5 +1,6 @@
 .venv
 .env
 lib/test.py
+lib/notes.txt
 lib/__pycache__
 requirements.txt
