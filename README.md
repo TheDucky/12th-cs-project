@@ -16,7 +16,7 @@
     - [X] delete note
     - [X] edit note
     - [ ] search note by author or date
-- [ ] export note list as plain text file to user
+- [X] export note list as plain text file to user
 - [ ] use htmx
 
 ### _resources:_
