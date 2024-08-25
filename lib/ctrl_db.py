@@ -22,6 +22,15 @@ else:
     print("unable to connect to database")
     exit()
 
+def stage_note():
+    file = open("lib/notes.txt", "w")
+    notes = reversed(get_notes())
+    for note in notes:
+        file.write("{0}: {1} [{2}]\n".format(note[0], note[1], note[3]))
+        file.write(note[2] + "\n")
+        file.write("-"*70 + "\n")
+    file.close()
+
 def get_notes():
     controller.execute('select * from notes')
     notes = controller.fetchall()

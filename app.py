@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
 from lib import ctrl_db as cd
 
 # creating instance of Flask class
@@ -32,6 +32,12 @@ def edit(sno):
         return redirect(url_for('index'))
     
     return render_template('edit.html', note=cd.get_one_note(sno))
+
+@app.route('/export')
+def export_notes():
+    cd.stage_note()
+    export_file = "lib/notes.txt"
+    return send_file(export_file, as_attachment=True)
 
 # name class instance is used my flask to get resources, templates etc
 if __name__ == '__main__': 
