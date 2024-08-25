@@ -9,8 +9,8 @@ app = Flask(__name__)
 def index():
 
     if request.method == 'POST':
-        title = request.form.get('title')
-        note = request.form.get('note')
+        title = request.form.get('title').strip()
+        note = request.form.get('note').strip()
         cd.add_note(title, note)
         return redirect(url_for('index')) # used to clean the data already present in the form
 
@@ -27,7 +27,7 @@ def delete(sno):
 def edit(sno):
 
     if request.method == 'POST':
-        newnote = request.form.get('newnote')
+        newnote = request.form.get('newnote').strip()
         cd.edit_note(sno, newnote)
         return redirect(url_for('index'))
     
