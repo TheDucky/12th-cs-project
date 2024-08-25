@@ -3,6 +3,22 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.nav_bar a {
+    float: right;
+    color: #2e3440;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.4s;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.nav_bar a:hover {
+    background-color: #8fbcbb;
+}
+
 .sform {
     max-width: 630px;
     padding: 10px;
