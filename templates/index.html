@@ -23,7 +23,7 @@
             <a href="{{ url_for('edit', sno=note[0]) }}">
                 <button>View/Edit</button>
             </a>
-            <form action="{{ url_for('delete', sno=note[0]) }}" method="POST">
+            <form action="{{ url_for('delete', sno=note[0]) }}">
                 <input type="submit" value="Delete">
             </form>
         </div>

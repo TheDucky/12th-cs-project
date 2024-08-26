@@ -17,7 +17,7 @@ def index():
     notes = cd.get_notes()
     return render_template('index.html', notes=notes)
 
-@app.route('/<int:sno>/delete', methods=('POST', 'GET')) # sno passed into rout to determine which post to be deleted
+@app.route('/<int:sno>/delete') # sno passed into rout to determine which post to be deleted
 def delete(sno):
     
     cd.delete_note(sno)
