@@ -7,7 +7,7 @@
     - [X] add note
     - [X] delete note
     - [X] edit note
-    - [ ] search note by author or date
+    - [ ] search note
 - [X] run flask application
 - [X] display notes
 - [X] design basic web UI
@@ -15,9 +15,9 @@
     - [X] add note
     - [X] delete note
     - [X] edit note
-    - [ ] search note by author or date
+    - [ ] active search note
 - [X] export note list as plain text file to user
-- [ ] use htmx
+- [X] use htmx
 
 ### _resources:_
 - [sql-connector official docs](https://dev.mysql.com/doc/connector-python/en)

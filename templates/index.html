@@ -14,20 +14,20 @@
     </form>
     <br><br>
 
-    {% for note in notes|reverse %}
-    <div class="note_container">
-        <h2 class="note_title">{{ note[1] }}</h2>
-        <p class="note_content">{{ note[2] }}</p>
-        <p class="note_date"><i>{{ note[3] }}</i></p>
-        <div class="buttons">
-            <a href="{{ url_for('edit', sno=note[0]) }}">
-                <button>View/Edit</button>
-            </a>
-            <form action="{{ url_for('delete', sno=note[0]) }}">
-                <input type="submit" value="Delete">
-            </form>
+    <div hx-target="this" hx-swap="outerHTML">
+        {% for note in notes|reverse %}
+        <div class="note_container">
+            <h2 class="note_title">{{ note[1] }}</h2>
+            <p class="note_content">{{ note[2] }}</p>
+            <p class="note_date"><i>{{ note[3] }}</i></p>
+            <div class="buttons">
+                <a href="{{ url_for('edit', sno=note[0]) }}">
+                    <button>View/Edit</button>
+                </a>
+                <button hx-delete="/{{ note[0] }}/delete">Delete</button>
+            </div>
         </div>
-    </div>
-    <br>
+        <br>
     {% endfor %}
+    </div>
 {% endblock %}

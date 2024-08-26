@@ -14,14 +14,13 @@ def index():
         cd.add_note(title, note)
         return redirect(url_for('index')) # used to clean the data already present in the form
 
-    notes = cd.get_notes()
-    return render_template('index.html', notes=notes)
+    return render_template('index.html', notes=cd.get_notes())
 
-@app.route('/<int:sno>/delete') # sno passed into rout to determine which post to be deleted
+@app.route('/<int:sno>/delete', methods=('DELETE', 'GET')) # sno passed into rout to determine which post to be deleted
 def delete(sno):
     
     cd.delete_note(sno)
-    return redirect(url_for('index'))
+    return render_template('notelist.html', notes=cd.get_notes())
 
 @app.route('/<int:sno>/vedit', methods=('POST', 'GET'))
 def edit(sno):
